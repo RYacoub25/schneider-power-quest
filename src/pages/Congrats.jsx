@@ -1,17 +1,16 @@
-import QuestTracker from '../components/QuestTracker';
-import Link from 'next/link';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import QuestTracker from '../components/QuestTracker.jsx';
 
 export default function Congrats() {
     return (
-        <div style={{ padding: '32px', textAlign: 'center' }}>
+        <div className="page congrats">
             <QuestTracker currentLevel={5} />
             <h2>🎉 Congratulations! 🎉</h2>
             <p>You’ve completed the Schneider Power Quest.</p>
             <p>Stay tuned for your exclusive reward codes.</p>
-            <Link href="/">
-                <a style={{ color: '#007A33', textDecoration: 'underline' }}>
-                    Return to Home
-                </a>
+            <Link to="/" className="link-home">
+                Return to Home
             </Link>
         </div>
     );
