@@ -1,24 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import QuestTracker from '../components/QuestTracker.jsx';
-
+import QuestTracker from '../../components/QuestTracker.jsx';
+import Switches from './Switches.jsx';
+import Sockets from './Sockets.jsx';
+import Breakers from './Breakers.jsx';
+import UPS from './UPS.jsx';
+import Contactor from './Contactor.jsx';
 export default function Level() {
     const { level } = useParams();
     const lvl = parseInt(level, 10);
     const navigate = useNavigate();
-
+    const [isDone, setIsDone] = useState(false);
     const renderContent = () => {
         switch (lvl) {
             case 1:
-                return <div>🔧 <strong>Switch Quiz Placeholder</strong></div>;
+                return <Switches isDone={isDone} setIsDone={setIsDone} />;
             case 2:
-                return <div>🔌 <strong>Outlet AR Placeholder</strong></div>;
+                return <Sockets isDone={isDone} setIsDone={setIsDone} />;
             case 3:
-                return <div>⚡ <strong>Breaker Puzzle Placeholder</strong></div>;
+                return <Breakers isDone={isDone} setIsDone={setIsDone} />;
             case 4:
-                return <div>📊 <strong>Meter Calculator Placeholder</strong></div>;
+                return <UPS isDone={isDone} setIsDone={setIsDone} />
             case 5:
-                return <div>🎡 <strong>Contactor Spin-the-Wheel Placeholder</strong></div>;
+                return <Contactor isDone={isDone} setIsDone={setIsDone} />;
             default:
                 return <div>Unknown Level</div>;
         }
@@ -26,17 +30,19 @@ export default function Level() {
 
     return (
         <div className="page level">
-            <QuestTracker currentLevel={lvl} />
-            <h2>Level {lvl}</h2>
-            <div className="level-content">{renderContent()}</div>
-            <button
-                onClick={() =>
-                    lvl < 5 ? navigate(`/levels/${lvl + 1}`) : navigate('/congrats')
-                }
-                className="btn-next"
-            >
-                {lvl < 5 ? 'Next Level' : 'Finish Quest'}
-            </button>
+            <div className='card'>
+                <QuestTracker currentLevel={lvl} />
+                {/* <h2>Level {lvl}</h2> */}
+                <div className="level-content">{renderContent()}</div>
+                {isDone && (<button
+                    onClick={() =>
+                        lvl < 5 ? navigate(`/levels/${lvl + 1}`) : navigate('/congrats')
+                    }
+                    className="btn-next"
+                >
+                    {lvl < 5 ? 'Next Level' : 'Finish Quest'}
+                </button>)}
+            </div>
         </div>
     );
 }

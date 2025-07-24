@@ -1,13 +1,47 @@
+/* Full‐screen background */
+/* globals.css */
+
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: url('/Background 2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* fill every bit of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Page container fills viewport */
+.page.level {
+    min-height: 100%;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+
 .app-container {
     width: 100%;
-    max-width: 480px;
+    max-width: 800px;
     padding: 16px;
 }
 
 .quest-tracker {
-    margin-bottom: 16px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     display: flex;
     gap: 8px;
+    justify-content: center;
 }
 
 .quest-tracker a {
@@ -19,21 +53,17 @@
 }
 
 .quest-tracker a.active {
-    background: #007A33;
+    background: #009E4D;
     color: #fff;
 }
 
-.page {
-    text-align: center;
-}
 
 .btn-start,
-.btn-next,
 .link-home {
     display: inline-block;
     margin-top: 16px;
     padding: 12px 24px;
-    background: #007A33;
+    background: #009E4D;
     color: #fff;
     text-decoration: none;
     border: none;
@@ -43,4 +73,686 @@
 
 .level-content {
     margin: 24px 0;
+}
+
+/* src/styles/globals.css */
+.page {
+    text-align: center;
+    padding: 20px;
+}
+
+.quiz {
+    margin-top: 20px;
+}
+
+.quiz form div {
+    margin-bottom: 10px;
+}
+
+.feedback {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.btn-next {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #009E4D;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-next:hover {
+    background-color: #009E4D;
+}
+
+/* src/styles/globals.css */
+.quiz-container {
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    columns: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.option-btn {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #78a97a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.option-btn:hover {
+    background-color: #45a049;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* src/styles/globals.css */
+.quiz-container {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.option-btn:hover {
+    background-color: #45a049;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.feedback {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #d9534f;
+}
+
+.next-btn {
+    background-color: #28a745;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.next-btn:hover {
+    background-color: #218838;
+}
+
+
+
+/* src/styles/SocketHunt.css */
+.socket-hunt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* horizontally center everything */
+    text-align: center;
+}
+
+.socket-hunt .image-container {
+    position: relative;
+    margin: 1rem auto;
+    width: 80vw;
+    /* scale to 80% of the viewport width */
+    max-width: 800px;
+    /* cap so it never gets too big */
+    overflow: hidden;
+}
+
+.socket-hunt .image-container .image {
+    width: 100%;
+    height: auto;
+    /* let height grow naturally */
+    object-fit: contain;
+    /* show the full image */
+    display: block;
+    /* remove any inline gaps */
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+
+
+.socket {
+    position: absolute;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.5);
+    /* Initially red */
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.socket:hover {
+    background-color: rgba(0, 255, 0, 0.5);
+    /* Highlight sockets when hovered */
+}
+
+.socket.found {
+    background-color: rgba(0, 255, 0, 0.4);
+    /* Green when found */
+    border-color: green;
+}
+
+.success {
+    font-size: 1.5rem;
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* The card now holds everything: tracker, header, content, button */
+.card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    max-width: auto;
+    width: 100%;
+}
+
+/* Optional: space out elements inside the card */
+.card>*+* {
+    margin-top: 1.5rem;
+}
+
+/* Make sure the image container lives inside the card and never spills out */
+.card .image-container {
+    width: 100%;
+    /* fill the entire card width */
+    max-width: 100%;
+    /* never exceed it */
+    margin: 0 auto;
+    /* center if it’s smaller */
+    overflow: hidden;
+    /* clip any stray pixels */
+}
+
+/* Then have the image scale down to fit, but never crop */
+.card .image-container .image {
+    width: 100%;
+    /* always fit the container’s width */
+    height: auto;
+    /* maintain aspect ratio */
+    object-fit: contain;
+    /* display the whole picture */
+    display: block;
+    /* remove inline spacing */
+}
+
+.breaker-boss {
+    padding: 24px;
+}
+
+/* Title & instruction */
+.breaker-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.breaker-instructions {
+    margin-bottom: 24px;
+}
+
+/* Draggable list */
+.breakers-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+/* Each breaker tile */
+.breaker-item {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    user-select: none;
+    transition: opacity 0.2s;
+}
+
+.breaker-item.placed {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Definitions grid */
+.definitions-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .definitions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Each definition tile */
+.definition-item {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-height: 96px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.definition-item.correct {
+    border-color: #009E4D;
+    background-color: #f4fbf8;
+}
+
+/* Placed breaker inside a definition */
+.placed-breaker {
+    margin-top: 12px;
+    padding: 8px;
+    color: white;
+    background: #009E4D;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.waveform-boss {
+    padding: 24px;
+    text-align: center;
+}
+
+.waveform-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.waveform-canvas {
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+}
+
+.waveform-feedback {
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.waveform-feedback.correct {
+    color: #15803d;
+    /* green */
+}
+
+.waveform-feedback.incorrect {
+    color: #b91c1c;
+    /* red */
+}
+
+.waveform-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.waveform-button {
+    padding: 8px 16px;
+    border: 1px solid #888;
+    background: #fff;
+    color: black;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.waveform-button:hover {
+    background-color: #d7d6d6;
+}
+
+.waveform-button.correct {
+    border-color: #009E4D;
+    background-color: #ddf4e9;
+}
+
+.waveform-button.incorrect {
+    border-color: #ef4444;
+    background-color: #edcece;
+}
+
+.waveform-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.contactor-boss {
+    padding: 24px;
+    text-align: center;
+}
+
+.contactor-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+}
+
+.wheel-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 24px;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#f87171 0deg 60deg,
+            #fbbf24 60deg 120deg,
+            #34d399 120deg 180deg,
+            #60a5fa 180deg 240deg,
+            #a78bfa 240deg 300deg,
+            #f472b6 300deg 360deg);
+    transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.segment-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+
+    white-space: nowrap;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+}
+
+.pointer {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 25px solid #ef4444;
+}
+
+.spin-button {
+    padding: 10px 24px;
+    font-size: 1rem;
+    background: #0d8748;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.spin-button:disabled {
+    background: #a0e3c1;
+    cursor: not-allowed;
+}
+
+.spin-button:hover:not(:disabled) {
+    background: #09572f;
+}
+
+.contactor-result {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: #15803d;
+}
+
+.contactor-desc {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #000000;
+}
+
+.page.congrats {
+    position: relative;
+    overflow: hidden;
+    padding: 24px;
+    text-align: center;
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: fall 3s ease-out forwards;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(300px) rotate(360deg);
+    }
+}
+
+.congrats-title {
+    font-size: 4rem;
+    margin: 16px 0 8px;
+}
+
+.congrats-sub {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.link-home {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: #009E4D;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.link-home:hover {
+    background: #009E4D;
+}
+
+.gif-container {
+    margin: 16px 0;
+}
+
+.congrats-gif {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+.spark-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    display: flex;
+
+}
+
+.spark {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    animation: spark-flicker 3s ease-in-out infinite;
+}
+
+@keyframes spark-flicker {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+.home-title {
+    font-size: 3rem;
+    margin-bottom: 4px;
+    animation: title-pop 0.6s ease-out forwards;
+}
+
+@keyframes title-pop {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.home-sub {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+}
+
+.btn-start {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1.125rem;
+    color: #009E4D;
+    background: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: button-pulse 2s ease-in-out infinite;
+    transition: background 0.2s, color 0.2s;
+    align-self: center;
+}
+
+.btn-start:hover {
+    background: #e0e7ff;
+}
+
+@keyframes button-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.home-card {
+
+    background: linear-gradient(135deg, #009E4D, #015429);
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 40px auto;
+    position: relative;
+    /* for spark positioning */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-self: center;
+
+
+}
+
+/* Adjust text colors inside the card */
+.home-card .home-title,
+.home-card .home-sub,
+.home-card .level-card h3,
+.home-card .level-card p {
+
+    color: #dedfdf;
+    align-self: center;
+}
+
+
+.levels-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 18px 0;
+}
+
+.level-card {
+    justify-items: center;
+
 }

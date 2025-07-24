@@ -1,12 +1,12 @@
 body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #f9f9f9;
+    margin: 0;
+    font-family: sans-serif;
+    background: #f9f9f9;
 }
 
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 }
