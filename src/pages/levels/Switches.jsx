@@ -142,6 +142,7 @@ export default function Switches({ isDone, setIsDone }) {
 
     return (
         <div className="quiz-container">
+            <h1>Switches Quiz</h1>
             <h2>Question {currentQuestionIndex + 1}</h2>
             <p>{question}</p>
 

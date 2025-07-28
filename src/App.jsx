@@ -9,6 +9,7 @@ import './styles/globals.css';
 export default function App() {
   return (
     <div className="app-container">
+      <img className="header" src="./public/header.png" alt="header" />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/levels/:level" element={<Level />} />

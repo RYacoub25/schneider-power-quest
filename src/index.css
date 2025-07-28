@@ -1,12 +1,18 @@
-body {
+html,
+body,
+#root {
+    height: 100%;
     margin: 0;
-    font-family: sans-serif;
-    background: #f9f9f9;
 }
 
-#root {
+body {
+    margin: 0;
+    zoom: 67%;
+    min-height: 100vh;
+    background: url('../../public/Background 2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* fill every bit of the viewport */
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
+    align-items: center;
 }
